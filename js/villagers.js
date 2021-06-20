@@ -3,7 +3,6 @@
     const BASE_URL = "https://acnhapi.com/v1/villagers/";
     const NUM_VILLAGERS = 391;
     const randomBtn = document.getElementById("random-btn");
-    const villagerContainer = document.querySelector(".village-bg");
     const villagerContainers = document.querySelectorAll(".villager-container");
     let villagerData = null;
     const villagerIds = getVillagerIds();
@@ -34,7 +33,6 @@
                 })
                 .catch(handleError)
         } else {
-            clearVillagers();
             let chosenIds = getRandomSubarray(villagerIds, 3);
             for (let i = 0; i < chosenIds.length; i++) {
                 let id = chosenIds[i];
@@ -73,9 +71,5 @@
 
     function handleError(err){
         console.error(err);
-    }
-
-    function clearVillagers() {
-        // villagerContainer.innerHTML = "";
     }
 })();

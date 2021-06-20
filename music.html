@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang=en>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" 
+            content="a toy site built using the animal crossing API">
+
+        <title>Animal Crossing Toy Site- K.K. Songs</title>
+        <link rel="stylesheet" href="./css/styles.css" />
+    </head>
+    <body>
+        <header class="centered">
+            <h1>K.K. Songs in Animal Crossing</h1>
+            <nav>
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./fish.html">Fish</a></li>
+                    <li><a href="./villagers.html">Villagers</a></li>
+                    <li><a href="./music.html" class="active">Music</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main class="centered">
+            <input type="text" id="music-search" placeholder="Search...">
+            <section id="music-container"></section>
+            <p class="hidden centered">No K.K. Songs with the given name found</p>
+        </main>
+        <script src="./js/music.js"></script>
+    </body>
+</html>
