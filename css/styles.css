@@ -1,0 +1,86 @@
+/*
+    Color palette: 
+    #A0D1CB bg
+    #18B076 grass
+    #FFFFFF white
+    #132A13 dark text
+    #31572C hunter green
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Montserrat:wght@400;700&display=swap');
+body {
+    background-image: url("https://wallpapercave.com/wp/wp4383745.jpg");
+    background-repeat: no-repeat;
+    color: #132A13;
+    font-family: 'Montserrat', sans-serif;
+    background-attachment: fixed;
+}
+
+header {
+    text-align: center;
+    width: 80%;
+}
+
+h1 {
+    font-family: 'Balsamiq Sans', cursive;
+}
+
+main {
+    width: 80%;
+    background-color: white;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-top: 30px;
+}
+
+nav {
+    background-color: white;
+    padding: 10px 0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+}
+
+.centered {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table, th, td {
+    border: 1px solid #31572C;
+}
+
+th, td {
+    padding: 10px;
+}
+
+table {
+    text-align: center;
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th {
+    font-weight: 700;
+}
+
+#fish-table img {
+    width: 200px;
+}
+
+.hidden {
+    display: none;
+}
+
+.controls {
+    width: 60%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-around;
+}

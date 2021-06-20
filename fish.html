@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang=en>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" 
+            content="a toy site built using the animal crossing API">
+
+        <title>Animal Crossing Toy Site- Fish</title>
+        <link rel="stylesheet" href="./css/styles.css" />
+    </head>
+    <body>
+        <header class="centered">
+            <h1>Fish in Animal Crossing</h1>
+            <nav>
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./fish.html">Fish</a></li>
+                    <li><a href="./villagers.html">Villagers</a></li>
+                    <li><a href="./music.html">Music</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main class="centered">
+            <table id="fish-table">
+                <thead id="fish-table-header">
+                    <tr>
+                        <th>Name</th>
+                        <th>Availability (Northern)</th>
+                        <th>Availability (Southern)</th>
+                        <th>Price</th>
+                        <th>Image</th>
+                    </tr>
+                </thead>
+                <tbody id="fish-table-body">
+                </tbody>
+            </table>
+            <div class="controls">
+                <button id="prev-btn" class="hidden">Previous Page</button>
+                <button id="next-btn">Next Page</button>
+            </div>
+        </main>
+        
+        <script src="./js/fish.js"></script>
+    </body>
+</html>
