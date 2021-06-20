@@ -21,6 +21,24 @@
             </nav>
         </header>
         <main class="centered">
+            <div class="controls">
+                <div>
+                    <input type="radio" id="none-sort" name="sort" value="none" checked>
+                    <label for="none">None</label>
+                </div>
+                <div>
+                    <input type="radio" id="price-sort-asc" name="sort" value="price-asc">
+                    <label for="price-sort-asc">Price (Low to High)</label>
+                </div>
+                <div>
+                    <input type="radio" id="price-sort-desc" name="sort" value="price-desc">
+                    <label for="price-sort-desc">Price (High to Low)</label>
+                </div>
+                <div>
+                    <input type="radio" id="name-sort" name="sort" value="name">
+                    <label for="name-sort">Name</label>
+                </div>
+            </div>
             <table id="fish-table">
                 <thead id="fish-table-header">
                     <tr>
@@ -28,7 +46,7 @@
                         <th>Availability (Northern)</th>
                         <th>Availability (Southern)</th>
                         <th>Price</th>
-                        <th>Image</th>
+                        <th>Icon</th>
                     </tr>
                 </thead>
                 <tbody id="fish-table-body">

@@ -35,18 +35,14 @@ main {
 
 nav {
     background-color: white;
-    padding: 10px 0;
 }
 
 nav ul {
     display: flex;
     justify-content: space-around;
     list-style: none;
-}
-
-.centered {
-    margin-left: auto;
-    margin-right: auto;
+    align-items: center;
+    height: 50px;
 }
 
 table, th, td {
@@ -59,17 +55,44 @@ th, td {
 
 table {
     text-align: center;
-    width: 100%;
+    width: 80%;
     border-collapse: collapse;
-    margin-bottom: 20px;
+    margin: 20px auto;
 }
 
 th {
     font-weight: 700;
 }
 
+button {
+    font-family: 'Montserrat', sans-serif;
+    box-shadow: none;
+    padding: 10px 20px;
+    background-color: #18B076;
+    border: none;
+    color: white;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+nav a {
+    color: #132A13;
+    display: inline-block;
+}
+
+nav a:hover {
+    color: #18B076;
+}
+
+nav li {
+    flex-grow: 1;
+    margin: 0;
+}
+
 #fish-table img {
-    width: 200px;
+    width: 100px;
 }
 
 .hidden {
@@ -83,4 +106,9 @@ th {
     margin-right: auto;
     display: flex;
     justify-content: space-around;
+}
+
+.centered {
+    margin-left: auto;
+    margin-right: auto;
 }

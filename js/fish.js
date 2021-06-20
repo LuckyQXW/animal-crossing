@@ -8,6 +8,7 @@
     const prevBtn = document.getElementById("prev-btn");
     let currPageId = 0;
     let fishData = null;
+    let fishDataOriginal = null;
 
     window.addEventListener("load", init);
 
@@ -15,6 +16,10 @@
         loadFish(currPageId);
         nextBtn.addEventListener("click", loadNextPage);
         prevBtn.addEventListener("click", loadPrevPage);
+        let radioBtns = document.querySelectorAll("input[name='sort']");
+        for (let i = 0; i < radioBtns.length; i++) {
+            radioBtns[i].addEventListener("click", onSelectFilter);
+        }
     }
 
     function loadFish(pageId) {
@@ -24,6 +29,7 @@
                 .then(JSON.parse)
                 .then(data => {
                     fishData = Object.values(data);
+                    fishDataOriginal = JSON.parse(JSON.stringify(fishData));
                     loadFish(pageId);
                 })
                 .catch(handleError)
@@ -31,8 +37,7 @@
             for (let i = pageId * NUM_FISH_PER_PAGE; i < (pageId + 1) * NUM_FISH_PER_PAGE; i++) {
                 let row = document.createElement("tr");
                 fishTable.appendChild(row);
-                let id = i + 1;
-                row.id = "fish" + id;
+                row.id = "fish" + fishData[i].id;
                 displayFish(fishData[i])
             }
         }
@@ -44,7 +49,7 @@
         addCellToRow(data.availability["month-northern"], id);
         addCellToRow(data.availability["month-southern"], id);
         addCellToRow(data.price, id);
-        addImgCellToRow(data["image_uri"], data.name["name-USen"], id);
+        addImgCellToRow(data["icon_uri"], data.name["name-USen"] + " icon", id);
     }
 
     function checkStatus(response) {
@@ -85,8 +90,7 @@
         if (currPageId > 0) {
             prevBtn.classList.remove("hidden");
         }
-        clearTable();
-        loadFish(currPageId);
+        loadCurrPage();
     }
 
     function loadPrevPage() {
@@ -100,11 +104,30 @@
         if (currPageId < 0) {
             console.error("No more pages to load");
         }
-        clearTable();
-        loadFish(currPageId);
+        loadCurrPage();
     }
 
     function clearTable() {
         document.getElementById("fish-table-body").innerHTML = "";
+    }
+
+    function loadCurrPage() {
+        clearTable();
+        loadFish(currPageId);
+    }
+
+    function onSelectFilter() {
+        let selected = document.querySelector("input[name='sort']:checked").value;
+        if (selected === "none") {
+            fishData = JSON.parse(JSON.stringify(fishDataOriginal));
+        } else if (selected === "price-asc") {
+            fishData.sort((a, b) => a.price - b.price);
+        } else if (selected === "price-desc") {
+            fishData.sort((a, b) => b.price - a.price);
+        } else if (selected === "name") {
+            fishData.sort((a, b) => (a.name["name-USen"] > b.name["name-USen"] ? 1 : -1));
+        }
+        currPageId = 0;
+        loadCurrPage();
     }
 })();
