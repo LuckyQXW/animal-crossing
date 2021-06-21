@@ -9,7 +9,7 @@
 
     function init() {
         loadAllSongs();
-        searchBar.addEventListener("change", loadSomeSongs);
+        searchBar.addEventListener("keyup", loadSomeSongs);
     }
 
     function loadAllSongs() {
