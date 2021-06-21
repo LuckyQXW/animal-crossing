@@ -55,9 +55,16 @@
     function displayVillager(containerId, villagerId) {
         const container = villagerContainers[containerId];
         const name = villagerData[villagerId - 1].name["name-USen"];
-        container.children[0].src = villagerData[villagerId - 1]["image_uri"];
-        container.children[0].alt = name;
-        container.children[1].textContent = name;
+        const img = container.children[0];
+        const label = container.children[1];
+        img.classList.add("semi-transparent");
+        img.src = villagerData[villagerId - 1]["image_uri"];
+        label.textContent = "Loading...";
+        img.onload = function() {
+            img.classList.remove("semi-transparent");
+            label.textContent = name;
+        }
+        img.alt = name;
     }
 
     function checkStatus(response) {

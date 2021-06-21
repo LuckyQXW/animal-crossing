@@ -140,10 +140,18 @@ nav li {
     height: 200px;
 }
 
+.semi-transparent {
+    opacity: 50%;
+}
+
 .villager-container p {
     background-color: white;
     margin: 0;
     padding: 10px 0;
+}
+
+#home-img {
+    width: 100%;
 }
 
 #music-container {

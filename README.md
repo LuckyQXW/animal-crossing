@@ -1,2 +1,2 @@
 # animal-crossing
-A practice site made with the animal crossing api
+A practice site made with the [Animal Crossing API](https://acnhapi.com/doc).
